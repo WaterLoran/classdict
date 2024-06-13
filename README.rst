@@ -1,14 +1,14 @@
-.. image:: https://img.shields.io/pypi/v/easydict.svg
-        :target: https://pypi.python.org/pypi/easydict
+.. image:: https://img.shields.io/pypi/v/ClassDict.svg
+        :target: https://pypi.python.org/pypi/ClassDict
 
-.. image:: https://img.shields.io/pypi/dm/easydict.svg
-        :target: https://pypi.python.org/pypi/easydict
+.. image:: https://img.shields.io/pypi/dm/ClassDict.svg
+        :target: https://pypi.python.org/pypi/ClassDict
 
 ========
-Easydict
+ClassDict
 ========
 
-*EasyDict* allows to access dict values as attributes (works recursively). 
+*ClassDict* allows to access dict values as attributes (works recursively). 
 A Javascript-like properties dot notation for python dicts.
 
 INSTALL
@@ -16,7 +16,7 @@ INSTALL
 
 ::
     
-    pip install easydict
+    pip install ClassDict
 
 
 USAGE
@@ -24,7 +24,19 @@ USAGE
 
 ::
 
-    >>> from easydict import EasyDict as edict
+    >>> from classdict import ClassDict as edict
+        >>> d = edict({'foo':3, 'bar':{'x':1, 'y':2}})
+        >>> d.foo
+        3
+        >>> d.bar.x
+        1
+
+        >>> d = edict(foo=3)
+        >>> d.foo
+        3
+
+
+    Very useful when exploiting parsed JSON content !
     >>> d = edict({'foo':3, 'bar':{'x':1, 'y':2}})
     >>> d.foo
     3
@@ -40,7 +52,7 @@ Very useful when exploiting parsed JSON content !
 
 ::
 
-    >>> from easydict import EasyDict as edict
+    >>> from ClassDict import ClassDict as edict
     >>> from simplejson import loads
     >>> j = """{
     "Buffer": 12,
@@ -61,7 +73,7 @@ Can set attributes as easily as getting them :
 
 ::
 
-    >>> d = EasyDict()
+    >>> d = ClassDict()
     >>> d.foo = 3
     >>> d.foo
     3
@@ -70,7 +82,7 @@ It is still a ``dict`` !
 
 ::
 
-    >>> d = EasyDict(log=False)
+    >>> d = ClassDict(log=False)
     >>> d.debug = True
     >>> d.items()
     [('debug', True), ('log', False)]
@@ -79,7 +91,7 @@ Instance and class attributes are accessed like usual objects...
 
 ::
 
-    >>> class Flower(EasyDict):
+    >>> class Flower(ClassDict):
     ...     power = 1
     ...
     >>> f = Flower({'height': 12})

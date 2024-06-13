@@ -6,12 +6,12 @@ from setuptools import setup, find_packages
 here = os.path.abspath(os.path.dirname(__file__))
 
 setup(
-    name='easydict',
-    version='1.13',
-    author='Mathieu Leplatre',
-    author_email='mathieu.leplatre@makina-corpus.com',
-    url='https://github.com/makinacorpus/easydict',
-    download_url="http://pypi.python.org/pypi/easydict/",
+    name='classdict',
+    version='1.15',
+    author='WaterLoran',
+    author_email='1696746432@qq.com',
+    url='https://github.com/WaterLoran/classdict',
+    download_url="http://pypi.python.org/pypi/classdict/",
     description="Access dict values as attributes (works recursively).",
     long_description=open(os.path.join(here, 'README.rst')).read() + '\n\n' +
                      open(os.path.join(here, 'CHANGES')).read(),
